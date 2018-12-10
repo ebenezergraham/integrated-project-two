@@ -45,12 +45,13 @@
                 </div>
             </div>
         </nav>
+<div class="container-fluid">
 <div class="row">
     <h1>Weather Page</h1>
         <h3>Enter a latitude and longitude and to view weather data for that location</h3>
 	</div>
 	<div class="row" id="coordinates">
-		<div class="mx-auto col">
+		<div class="col-xs-6 col-md-4">
 			<form id="submit" class="form-inline" action="javascript:void(0);">
 			    <div class="form-group form-check-inline">
 			      <input type="number" class="form-control" id="lat" name="latitude" placeholder="Latitude">
@@ -67,7 +68,7 @@
   	
 	<div class="row" id="weather-widget">
 	
-	<div class="mx-auto col">
+	<div class="col-xs-12 col-md-8">
       <!-- Here start the widget. This part of code can work alone with the javascript code -->
       <div id="widget" class="panel panel-primary">
         <div class="panel-heading">
@@ -90,7 +91,7 @@
               <div id="icon"></div>
               <p id="weather"></p>
             </div>
-            <div class="col">
+            <div class="col-xs-6 col-md-4">
               <div>
                 <p>Temperature:</p>
                 <p><span id="temp"></span>&#32;<span id="unit">°C</span></p>
@@ -112,7 +113,7 @@
       <!-- End of the widget -->
 		</div>
 	</div>
-
+	</div>
 	
 <!-- 	<div class="row">
 	<button class="btn" id="weather-map">Click</button>
