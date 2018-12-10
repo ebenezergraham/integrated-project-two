@@ -46,47 +46,43 @@
             </div>
         </nav>
 <div class="container-fluid">
-<div class="row">
-    <h1>Weather Page</h1>
-        <h3>Enter a latitude and longitude and to view weather data for that location</h3>
+	<div class="row">
+	    <h1>Weather Page</h1>
+	    <h3>Enter a latitude and longitude and to view weather data for that location</h3>
 	</div>
 	<div class="row" id="coordinates">
-		<div class="col-xs-6 col-md-4">
+<!-- 		<div class="col-xs-6 col-md-4"> -->
 			<form id="submit" class="form-inline" action="javascript:void(0);">
-			    <div class="form-group form-check-inline">
+			    <div class="form-group form-check-inline col-xs-6 col-md-4">
 			      <input type="number" class="form-control" id="lat" name="latitude" placeholder="Latitude">
 			    </div>
-			    <div class="form-group form-check-inline">		      
+			    <div class="form-group form-check-inline col-xs-6 col-md-4">		      
 			      <input type="number" class="form-control" id="lon" name="longitude" placeholder="Longitude">
 			    </div>
-			    <div class="form-group form-check-inline">
-		    	<button type="submit" class="btn btn-primary" id="submit">Submit</button>
-		    </div>
+			    <div class="form-group form-check-inline col-xs-6 col-md-4">
+		    		<button type="submit" class="btn btn-primary" id="submit">Submit</button>
+		    	     </div>
 		  	</form>
- 		</div>	  
+<!--  		</div>	   -->
   	</div>
   	
 	<div class="row" id="weather-widget">
 	
-	<div class="col-xs-12 col-md-8">
+	<div class="col-xs-12 col-md-offset-8">
       <!-- Here start the widget. This part of code can work alone with the javascript code -->
       <div id="widget" class="panel panel-primary">
         <div class="panel-heading">
           <!-- the action="javascript:void(0);" prevent the form from reload the page everytime it's submitted -->
           <form id="search" class="form-inline" role="form" action="javascript:void(0);">
             <div class="form-group"><!--  -->
-              <div class="input-group">
                 <input type="text" id="city" class="form-control form-control-sm" placeholder="City, country" autocomplete></input>
-                <div class="input-group-append">
-                    <button class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
-                </div>
-              </div>
             </div>
+            <button class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
           </form>
         </div>
         <div class="panel-body">
           <div class="current row">
-            <div class="col">
+            <div class="col-xs-6 col-md-4">
               <h5>Today</h5>
               <div id="icon"></div>
               <p id="weather"></p>
