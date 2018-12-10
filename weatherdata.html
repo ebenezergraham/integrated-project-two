@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ 	<meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/v4-shims.css">
+  	<link rel="stylesheet" href="resources/css/style.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<div id="mySidenav" class="sidenav">
+
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Overview</a>
+    <a href="geojson.html">GeoJson</a>
+    <a href="about-us.html">Authors</a>
+    <br>
+    <a>Data Feed</a>
+    <a href="earthquakedata.html">Earthquake Data</a>
+    <a href="weatherdata.html">Weather Data</a>
+    <a href="IP2_Map1.html">Map 1</a>
+</div>
+
+<div id="main">
+
+        <nav class="navbar">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <span class="fa fa-bars col-lg-1" style="padding:20px;cursor:pointer"
+                              onclick="openNav()"></span>
+                        <span class="navbar-brand col-lg-11">GeoDatum</span>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <a href="./index.html">Overview</a>
+                    <a href="geojson.html">GeoJson</a>
+                    <a href="about-us.html">Authors</a>
+                </div>
+            </div>
+        </nav>
+<div class="row">
+    <h1>Weather Page</h1>
+        <h3>Enter a latitude and longitude and to view weather data for that location</h3>
+	</div>
+	<div class="row" id="coordinates">
+		<div class="mx-auto col">
+			<form id="submit" class="form-inline" action="javascript:void(0);">
+			    <div class="form-group form-check-inline">
+			      <input type="number" class="form-control" id="lat" name="latitude" placeholder="Latitude">
+			    </div>
+			    <div class="form-group form-check-inline">		      
+			      <input type="number" class="form-control" id="lon" name="longitude" placeholder="Longitude">
+			    </div>
+			    <div class="form-group form-check-inline">
+		    	<button type="submit" class="btn btn-primary" id="submit">Submit</button>
+		    </div>
+		  	</form>
+ 		</div>	  
+  	</div>
+  	
+	<div class="row" id="weather-widget">
+	
+	<div class="mx-auto col">
+      <!-- Here start the widget. This part of code can work alone with the javascript code -->
+      <div id="widget" class="panel panel-primary">
+        <div class="panel-heading">
+          <!-- the action="javascript:void(0);" prevent the form from reload the page everytime it's submitted -->
+          <form id="search" class="form-inline" role="form" action="javascript:void(0);">
+            <div class="form-group"><!--  -->
+              <div class="input-group">
+                <input type="text" id="city" class="form-control form-control-sm" placeholder="City, country" autocomplete></input>
+                <div class="input-group-append">
+                    <button class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="panel-body">
+          <div class="current row">
+            <div class="col">
+              <h5>Today</h5>
+              <div id="icon"></div>
+              <p id="weather"></p>
+            </div>
+            <div class="col">
+              <div>
+                <p>Temperature:</p>
+                <p><span id="temp"></span>&#32;<span id="unit">°C</span></p>
+              </div>
+              <div>
+                <p>Humidity:</p>
+                <p><span id="hum"></span>&#32;%</p>
+              </div>
+            </div>
+          </div>
+          <div class="forecast row" id="forecast">
+	          	
+          </div>
+        </div>
+        <div class="panel-footer">
+          <a href="https://www.apixu.com/"><small>powered by Apixu</small></a>
+        </div>
+      </div>
+      <!-- End of the widget -->
+		</div>
+	</div>
+
+	
+	<div class="row">
+	<button class="btn" id="weather-map">Click</button>
+    <div id="weatherImage"></div>
+    <div id="weatherInfo"></div>
+    <div id="map" class="row"></div>
+    </div>
+</div>
+
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsIiS_x7fASxyQSJGDjSXORFldMHCjFME&callback=initMap"></script>
+	<script type="text/javascript" src="resources/js/weatherApi.js"></script>
+<script src="resources/js/script.js"></script>
+
+</body>
+
+</html>
