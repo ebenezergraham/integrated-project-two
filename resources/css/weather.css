@@ -1,5 +1,10 @@
 .panel-heading {
-  background: linear-gradient(#2269A6, #004784);
+  /*background: linear-gradient(#2269A6, #004784);*/
+}
+.panel-body {
+  /*background: linear-gradient(to bottom right, #07074b 0%, #00ffff 200%)';*/
+  background-image: url(https://cdn.apixu.com/apixu-weather-widget/img/apixu-backgrounds/4_widget3.png);
+  color: white; 
 }
 
 #city {
