@@ -30,7 +30,7 @@ if (navigator && navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(succesGetPos, errorGetPos);
 }
 //Weather through city search 
-$("#search").submit(getCityWeather); 	
+$("#search").click(getCityWeather); 	
 
 //Weather through longitude and latitude search 
 $("#submit").submit(getCoordWeather); 	
