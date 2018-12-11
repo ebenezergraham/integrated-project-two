@@ -38,6 +38,7 @@ $("#submit").submit(getCoordWeather);
 
 function succesGetPos(pos) {
 	//var openWeatherURL = "",
+	console.log(pos.type);
 	corsAwURL = "https://cors-anywhere.herokuapp.com/";
 	lat = pos.coords.latitude;
 	lon = pos.coords.longitude;
@@ -50,7 +51,15 @@ return 0;
 }
 
 function errorGetPos() {
-alert("Failed to get current position.");
+	console.log("oops, access denied to geolocation! Using Mauritian coordinates.");
+	position = {
+		coords : {
+			latitude : -20.251868,
+			longitude : 57.870755
+		}
+	}
+	console.log(position);
+	succesGetPos(position);
 
 return -1
 }
