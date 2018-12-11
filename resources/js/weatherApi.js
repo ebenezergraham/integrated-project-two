@@ -67,7 +67,7 @@ function openWeatherCall(json) {
 		day = "<span class ='row'>"+weekday[d.getDay()]+"</span>";
 		pic = "<img class ='row' src='http:"+json.forecast.forecastday[i].day.condition.icon+"'>";
 		p = "<div class ='row'>"+json.forecast.forecastday[i].day.avgtemp_c+"</div>";
-		$('#forecast').append("<div class='.col-md-3' id = 'day"+i+"'>"+ day + pic + p +"</div>")
+		$('#forecast').append("<div class='col-md-3' id = 'day"+i+"'>"+ day + pic + p +"</div>")
 	}
 	console.log(json);
 	//console.log(json.forecast.forecastday[0]);
