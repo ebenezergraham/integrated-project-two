@@ -72,7 +72,7 @@
         <div class="panel-heading">
           <!-- the action="javascript:void(0);" prevent the form from reload the page everytime it's submitted -->
 <!--           <form id="search" class="form-inline" role="form" action="javascript:void(0);"> -->
-<!--             <div class="form-group"><!--  --> -->
+<!--             <div class="form-group"><!--  --> 
                 <input type="text" id="city" class="form-control form-control-sm" placeholder="City, country" autocomplete></input>
 <!--             </div> -->
             <button id="search" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
@@ -82,17 +82,18 @@
           <div class="current">
 	      <div class="col-xs-12 col-sm-6">
 		      <h2>Today
-		      <span id="icon"></span></h2>
-		      <h2 id="weather"></h2>
+		      	<div id="icon"></div>
+			<b><p id="weather"></p><b>
+		      </h2>
               </div>
             <div class="col-xs-12 col-sm-6">
                 <h2>Temperature</h2>
-                <h2><span id="temp"></span>&#32;<span id="unit">°C</span></h2>
+                <h3><span id="temp"></span>&#32;<span id="unit">°C</span></h3>
                 <h2>Humidity</h2>
-                <h2><span id="hum"></span>&#32;%</h2>
+                <h3><span id="hum"></span>&#32;%</h3>
             </div>
           </div>
-          <div class="forecast col-xs-12 col-sm-12 col-lg-" id="forecast">
+	  <h2><div class="forecast col-xs-12 col-sm-12 col-lg-" id="forecast"></h2>
 	          	
           </div>
         </div>
