@@ -75,21 +75,22 @@
 <!--             <div class="form-group"><!--  --> -->
                 <input type="text" id="city" class="form-control form-control-sm" placeholder="City, country" autocomplete></input>
 <!--             </div> -->
-            <button class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+            <button id="search" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
 <!--           </form> -->
         </div>
         <div class="panel-body">
-          <div class="current col-xs-12 col-sm-6">
-              <h2>Today
-              <div id="icon"></div></h2>
-              <h2 id="weather"></h2>
-<!--             </div> -->
-<!--             <div class="col-xs-12 col-sm-6"> -->
+          <div class="current">
+	      <div class="col-xs-12 col-sm-6">
+		      <h2>Today
+		      <span id="icon"></span></h2>
+		      <h2 id="weather"></h2>
+              </div>
+            <div class="col-xs-12 col-sm-6">
                 <h2>Temperature</h2>
-                <p><span id="temp"></span>&#32;<span id="unit">°C</span></p>
+                <h2><span id="temp"></span>&#32;<span id="unit">°C</span></h2>
                 <h2>Humidity</h2>
-                <p><span id="hum"></span>&#32;%</p>
-<!--             </div> -->
+                <h2><span id="hum"></span>&#32;%</h2>
+            </div>
           </div>
           <div class="forecast col-xs-12 col-sm-12 col-lg-" id="forecast">
 	          	
