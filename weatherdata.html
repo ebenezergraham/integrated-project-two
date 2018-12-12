@@ -67,35 +67,38 @@
                 <div class="col-md-offset-2">
                     <h3>Enter a latitude and longitude and to view weather data for that location</h3>
                 </div>
-                <div class="form-group ">
+            	
+                <div id="widget" class="panel panel-default">
+                    <div class="panel-heading">
+                    	
+                        <!-- the action="javascript:void(0);" prevent the form from reload the page everytime it's submitted -->
+                        <div class="row">
+                        	<div class="form-group ">
                     <div class=" col-xs-12 col-sm-6 col-lg-8" id="coordinates">
                         <form id="submit" class="form-inline" action="javascript:void(0);">
                             <div class="form-group">
                                 <input type="number" class="form-control" id="lat" name="latitude"
-                                       placeholder="Latitude">
+                                       placeholder="Latitude" step="0.01">
                             </div>
                             <div class="form-group">
                                 <input type="number" class="form-control" id="lon" name="longitude"
-                                       placeholder="Longitude">
+                                       placeholder="Longitude" step="0.01">
                             </div>
                             <button type="submit" class="btn btn-primary" id="submit">Submit</button>
                         </form>
                     </div>
-                </div>
-                <div id="widget" class="panel panel-default">
-                    <div class="panel-heading">
-                        <!-- the action="javascript:void(0);" prevent the form from reload the page everytime it's submitted -->
                         <form id="search" class=" form-inline" role="form" action="javascript:void(0);">
                             <div class="form-group">
                                 <label class="sr-only" for="city">City,country</label>
-                                <input type="text" id="city" class="form-control form-control-sm"
-                                       placeholder="City, country" autocomplete></input>
+                                <input type="text" id="city" class="form-control"
+                                       placeholder="City, country" autocomplete>
                             </div>
-                            <span class="input-group-text" id="basic-addon2"><button id="search"
-                                                                                     class="btn btn-default"><i
-                                    class="glyphicon glyphicon-search"></i></button></span>
+                            <button id="search" class="btn btn-default"><i
+                                    class="glyphicon glyphicon-search"></i></button>
                         </form>
                     </div>
+                </div>
+                </div>
                     <div class="panel-body">
                         <div class="current">
                             <div class="col-xs-12 col-sm-6">
