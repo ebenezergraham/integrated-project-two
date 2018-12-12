@@ -101,7 +101,8 @@ p {
 
 
 .fa-bars{
-    font-size: 25px
+    font-size: 25px;
+    z-index: 200;
 }
 
 .navbar-brand {
@@ -259,7 +260,7 @@ p {
 }
 
 .card {
-    background-color: rgba(245, 245, 245, 0.8);
+    background-color: rgba(245, 245, 245, 0.9);
     padding: 5%;
     width: fit-content;
     box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 8px;
@@ -369,12 +370,9 @@ p {
     opacity: 0.6;
 }
 .testimonial .description{
-    font-size: 16px;
-    color: #777;
-    text-align: justify;
+    font-size: 1.3em;
+    text-align: center;
     margin-bottom: 30px;
-    opacity: 0.9;
-    letter-spacing: -1px;
 }
 .testimonial .testimonial-content{
     width: 100%;
@@ -385,7 +383,7 @@ p {
     display: inline-block;
     border: 6px solid white;
     border-radius: 50%;
-    box-shadow: 0 0 2px 2px #daad86;
+    box-shadow: 0 0 2px 2px #29323c;
     overflow: hidden;
     z-index: 1;
     position: relative;
@@ -395,7 +393,7 @@ p {
     height: auto;
 }
 .testimonial .title{
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
     color: #29323c;
     text-transform: capitalize;
@@ -409,7 +407,7 @@ p {
 .testimonial .post{
     display: block;
     font-size: 14px;
-    color: #daad86;
+    color: #29323c;
 }
 .owl-theme .owl-controls{
     margin-top: 60px;
@@ -419,13 +417,13 @@ p {
     width: 32px;
     height: 10px;
     background: #fff;
-    border: 2px solid #bd986b;
+    border: 2px solid #29323c;
     margin: 5px;
     opacity: 1;
 }
 .owl-theme .owl-controls .owl-page.active span,
 .owl-theme .owl-controls.clickable .owl-page:hover span{
-    background: #ffd9b8;
+    background: #29323c;
     border-color: #fff;
 }
 .pic img{
@@ -437,7 +435,7 @@ p {
 @media screen and (max-width: 480px) {
 
     .fa {
-        color: whitesmoke;
+        margin-left:20%;
     }
 
     .navbar.responsive {
@@ -485,7 +483,7 @@ p {
         position: absolute;
         max-width: 350px;
         top: 36%;
-        left: 20%;
+        left: 15%;
         transform: translate(-10%, -10%);
     }
 
