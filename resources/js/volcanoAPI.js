@@ -79,23 +79,18 @@ function buildMap(url, places) {
 //                 // Form a string that holds desired marker infoWindow content. The infoWindow will pop up when you click on a marker on the map
                 var infowindow = new google.maps.InfoWindow({
                     content:
-                    " <div id=\"volcanoImage\">" + "<div id=\"volcanoInfo\">"+
-                        '<p>V name: ' + marker.volcano.V_Name + '</p>'+
-                        '<p>V id: ' + marker.volcano.VolcanoID + '</p>'+
-                        '<p>Country: ' + marker.volcano.Country + '</p>'+
-                        '<p>Region: ' + marker.volcano.Region + '</p>'+</div>\n" + </div>"
-//                     " <div id=\"volcanoImage\"></div>\n" +
-//                         "    <div id=\"volcanoInfo\">No volcano data available</div>"
+                    " <div id=\"volcanoImage\"></div>\n" +
+                        "    <div id=\"volcanoInfo\">No volcano data available</div>"
                 });
                 marker.addListener('click', function () {
                     // We use the lat and lon as the parameters in the API call to weather service
                     var lat = marker.position.lat();
                     var lng = marker.position.lng();
-//                     $('#volcanoInfo').html(
-//                         '<p>V name: ' + marker.volcano.V_Name + '</p>'+
-//                         '<p>V id: ' + marker.volcano.VolcanoID + '</p>'+
-//                         '<p>Country: ' + marker.volcano.Country + '</p>'+
-//                         '<p>Region: ' + marker.volcano.Region + '</p>'
+                    $('#volcanoInfo').html(
+                        '<p>V name: ' + marker.volcano.V_Name + '</p>'+
+                        '<p>V id: ' + marker.volcano.VolcanoID + '</p>'+
+                        '<p>Country: ' + marker.volcano.Country + '</p>'+
+                        '<p>Region: ' + marker.volcano.Region + '</p>'
     
 //                         // '<p>Pressure: ' + data.current.pressure_mb + '</p>'+
 //                         // '<p>Precip: ' + data.current.precip_in + '</p>'+
