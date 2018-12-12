@@ -395,17 +395,17 @@ p {
     height: auto;
 }
 .testimonial .title{
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
-    color: #fff;
+    color: #3a1a1a;
     text-transform: capitalize;
     margin: 0 0 5px 0;
 }
 
 .testimonial .post{
     display: block;
-    font-size: 14px;
-    color: #ffd9b8;
+    font-size: 15px;
+    color: #fdac8d;
 }
 .owl-theme .owl-controls{
     margin-top: 60px;
