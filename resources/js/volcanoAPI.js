@@ -77,10 +77,10 @@ function buildMap(url, places) {
                 console.log("marker volcano ")
                 console.log(marker.volcano)
                 // Form a string that holds desired marker infoWindow content. The infoWindow will pop up when you click on a marker on the map
-                var infowindow = new google.maps.InfoWindow({
-                    content: " <div id=\"volcanoImage\"></div>\n" +
-                        "    <div id=\"volcanoInfo\">No volcano data available</div>"
-                });
+//                 var infowindow = new google.maps.InfoWindow({
+//                     content: " <div id=\"volcanoImage\"></div>\n" +
+//                         "    <div id=\"volcanoInfo\">No volcano data available</div>"
+//                 });
                 marker.addListener('click', function () {
                     // We use the lat and lon as the parameters in the API call to weather service
                     var lat = marker.position.lat();
