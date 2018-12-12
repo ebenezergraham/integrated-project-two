@@ -28,17 +28,17 @@ for (var prop in quakeFeeds) {
 }
 /* respond to a button press of any button of 'feed-name' class */
 $('.feed-name').click(function (e) {
-    // We fetch the earthquake feed associated with the actual button that has been pressed.
+    // We fetch the volcano feed associated with the actual button that has been pressed.
     // In this example we are not plotting on a map, just demonstrating how to get the data.
     $.ajax({
         url: $(e.target).data('feedurl'), // The GeoJSON URL associated with a specific button was stored in the button's properties when the button was created
 
         success: function (data) {  // We've received the GeoJSON data
-            var places = []; // We store the names of earthquake locations in this array
+            var places = []; // We store the names of Volcano locations in this array
             $.each(data.features, function (key, val) {  // Just get a single value ('place') and save it in an array
-                places.push(val.properties.place); // Add a new earthquake location to the array.
+                places.push(val.properties.place); // Add a new volcano location to the array.
             });
-            buildMap($(e.target).data('feedurl'))
+            buildMap($(e.target).data('feedurl'), places)
         }
     });
 });
