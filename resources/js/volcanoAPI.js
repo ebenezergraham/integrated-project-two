@@ -78,9 +78,9 @@ function buildMap(url, places) {
                 console.log(marker.volcano)
 //                 // Form a string that holds desired marker infoWindow content. The infoWindow will pop up when you click on a marker on the map
                 var infowindow = new google.maps.InfoWindow({
-                    content: " <div id=\"volcanoImage\"></div>\n" +
-                        "    <div id=\"volcanoInfo\">No volcano data available</div>"
-                });
+//                     content: " <div id=\"volcanoImage\"></div>\n" +
+//                         "    <div id=\"volcanoInfo\">No volcano data available</div>"
+//                 });
                 marker.addListener('click', function () {
                     // We use the lat and lon as the parameters in the API call to weather service
                     var lat = marker.position.lat();
@@ -90,60 +90,9 @@ function buildMap(url, places) {
                         '<p>V id: ' + marker.volcano.VolcanoID + '</p>'+
                         '<p>Country: ' + marker.volcano.Country + '</p>'+
                         '<p>Region: ' + marker.volcano.Region + '</p>'
-    
-                        // '<p>Pressure: ' + data.current.pressure_mb + '</p>'+
-                        // '<p>Precip: ' + data.current.precip_in + '</p>'+
-                        // '<p>Cloud: ' + data.current.cloud + '</p>'+
-                        // '<p>Humidity: ' + data.current.humidity + '</p>'+
-                        // '<p>Temperator:' + data.current.feelslike_c + '</p>'+
-                        // '<p>UV Level: ' + data.current.uv + '</p>'
-                    );
-                    // image = new Image();
-                    // image.src = "http:" + data.current.condition.icon; 
-                    // image.onload = function () {
+  
                         $('#volcanoImage').empty().append('<i class="fas fa-volcano"></i>');
-                    // };
-                     // current weather in text format
-                    // You need to use the FREE signup at https://www.apixu.com/ to get a key for the Weather URL below
-                    // theURL = 'http://api.apixu.com/v1/current.json?key=67923d08f9504585a23131454180311&q=' + lat.toFixed(4) + ',' + lng.toFixed(4);
-                    // $.ajax({
-                    //     url: theURL,
-                    //     success: function (data) {
-                    //         image = new Image();
-                    //         if (data.error) {
-                    //             image.src = "http://via.placeholder.com/64x64?text=%20"; // Error, so we use blank image for weather. See 'error:' below for another way to include a small blank image
-                    //         }
-                    //         else {
-                    //             image.src = "http:" + data.current.condition.icon; // icon is specified within the data
 
-                    //             $('#weatherInfo').html(
-                    //                 '<p>Condition: ' + data.current.condition.text + '</p>'+
-                    //                 '<p>Wind Speed: ' + data.current.wind_kph + '</p>'+
-                    //                 '<p>Wind Degree: ' + data.current.wind_degree + '</p>'+
-                    //                 '<p>Wind Direction: ' + data.current.wind_dir + '</p>'+
-                    //                 '<p>Pressure: ' + data.current.pressure_mb + '</p>'+
-                    //                 '<p>Precip: ' + data.current.precip_in + '</p>'+
-                    //                 '<p>Cloud: ' + data.current.cloud + '</p>'+
-                    //                 '<p>Humidity: ' + data.current.humidity + '</p>'+
-                    //                 '<p>Temperator:' + data.current.feelslike_c + '</p>'+
-                    //                 '<p>UV Level: ' + data.current.uv + '</p>'
-                    //             ); // current weather in text format
-                    //         }
-                    //         image.onload = function () {
-                    //             $('#weatherImage').empty().append(image);
-                    //         };
-
-                    //     },
-                    //     error: function () { // Weather service could not provide weather for requested lat,lon world location
-                    //         image = new Image();
-                    //         // A local 64*64 transparent image. Generated from the useful site: http://png-pixel.com/
-                    //         image.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAAAAAYLlVAAAAPElEQVR42u3OMQEAAAgDIJfc6BpjDyQgt1MVAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBgXbgARTAX8ECcrkoAAAAAElFTkSuQmCC";
-                    //         image.onload = function () {
-                    //             //set the image into the web page
-                    //             $('#weatherImage').empty().append(image);
-                    //         };
-                    //     }
-                    // });
                     infowindow.open(map, marker);
                 });
                 markers[i++] = marker; // Add the marker to array to be used by clusterer
