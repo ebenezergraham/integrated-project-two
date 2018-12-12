@@ -38,8 +38,17 @@ function successGetPos(pos) {
 }
 
 function errorGetPos() {
-    alert("Failed to get current position.");
-    return -1
+	console.log("oops, access denied to geolocation! Using Mauritian coordinates.");
+	position = {
+		coords : {
+			latitude : -20.251868,
+			longitude : 57.870755
+		}
+	}
+	console.log(position);
+	succesGetPos(position);
+
+return -1
 }
 
 function openWeatherCall(json) {
