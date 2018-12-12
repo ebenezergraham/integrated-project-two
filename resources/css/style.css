@@ -15,7 +15,6 @@ body {
     font-family: "Lato", sans-serif;
     transition: background-color .5s;
     background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
-    overflow: hidden;
 }
 
 h1, h2, h3 {
@@ -243,6 +242,7 @@ p {
 
 #main {
     transition: margin-left .5s;
+    overflow: hidden;
 
 }
 
