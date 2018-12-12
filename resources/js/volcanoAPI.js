@@ -80,7 +80,7 @@ function buildMap(url, places) {
                 var infowindow = new google.maps.InfoWindow({
                     content:
                     " <div id=\"volcanoImage\"></div>\n" +
-                        "    <div id=\"volcanoInfo\">No volcano data available</div>"
+                        "    <div id=\"volcanoInfo\">Click Again To see this volcano's details.</div>"
                 });
                 marker.addListener('click', function () {
                     // We use the lat and lon as the parameters in the API call to weather service
