@@ -2,7 +2,7 @@ var map;
 
 var quakeFeeds = {
     "volcanos": {
-        "all_volcanos": "https://data.humdata.org/dataset/a60ac839-920d-435a-bf7d-25855602699d/resource/7234d067-2d74-449a-9c61-22ae6d98d928/download/volcano.geojson",
+        "All Volcanos": "https://data.humdata.org/dataset/a60ac839-920d-435a-bf7d-25855602699d/resource/7234d067-2d74-449a-9c61-22ae6d98d928/download/volcano.geojson",
     }
 };
 var markers = []; // keep an array of Google Maps markers, to be used by the Google Maps clusterer
@@ -88,6 +88,7 @@ function buildMap(url, places) {
                     $('#volcanoInfo').html(
                         '<p>V name: ' + marker.volcano.V_Name + '</p>'+
                         '<p>V id: ' + marker.volcano.VolcanoID + '</p>'+
+                        '<p>Hazard Level: ' + marker.volcano.Hazard + '</p>'+
                         '<p>Country: ' + marker.volcano.Country + '</p>'+
                         '<p>Region: ' + marker.volcano.Region + '</p>'
     
