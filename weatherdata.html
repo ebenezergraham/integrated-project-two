@@ -10,19 +10,13 @@
     <link rel="stylesheet" href="resources/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-    	/*.panel-heading {
-  		background-color: #ff0;
-  	}*/
+    	.panel {
+  		border:5px solid whitesmoke;
+  	}
     	.panel-body {
 	  /*background: linear-gradient(to bottom right, #07074b 0%, #00ffff 200%)';*/
 	  background-image: url(https://cdn.apixu.com/apixu-weather-widget/img/apixu-backgrounds/4_widget3.png);
 	  color: white; 
-	}
-	.coords{
-		padding: 1%;
-		/*border-radius: 8px;*/
-		border: none;
-
 	}
     </style>
 </head>
@@ -67,50 +61,64 @@
                 <div class="col-md-offset-2">
                     <h3>Enter a latitude and longitude and to view weather data for that location</h3>
                 </div>
-                <div class="form-group ">
-                    <div class=" col-xs-12 col-sm-6 col-lg-8" id="coordinates">
+            	
+                <div id="widget" class="panel panel-default">
+                    <div class="panel-heading">
+
+                        <!-- the action="javascript:void(0);" prevent the form from reload the page everytime it's submitted -->
+                        <div class="row">
+                        	<div class="form-group ">
+                    <div class=" col-xs-12 col-sm-6 col-lg-8 col-md-offset-2" id="coordinates">
                         <form id="submit" class="form-inline" action="javascript:void(0);">
                             <div class="form-group">
                                 <input type="number" class="form-control" id="lat" name="latitude"
-                                       placeholder="Latitude">
+                                       placeholder="Latitude" step="0.01">
                             </div>
                             <div class="form-group">
                                 <input type="number" class="form-control" id="lon" name="longitude"
-                                       placeholder="Longitude">
+                                       placeholder="Longitude" step="0.01">
                             </div>
                             <button type="submit" class="btn btn-primary" id="submit">Submit</button>
                         </form>
                     </div>
+                       
+                    </div>
                 </div>
-                <div id="widget" class="panel panel-primary">
-                    <div class="panel-heading">
-                        <!-- the action="javascript:void(0);" prevent the form from reload the page everytime it's submitted -->
-                        <form id="search" class=" form-inline" role="form" action="javascript:void(0);">
+                </div>
+                    <div class="panel-body">
+                    	<div class="col-md-offset-4">
+                    		 <form id="search" class=" form-inline" role="form" action="javascript:void(0);">
                             <div class="form-group">
                                 <label class="sr-only" for="city">City,country</label>
-                                <input type="text" id="city" class="form-control form-control-sm"
-                                       placeholder="City, country" autocomplete></input>
+                                <input type="text" id="city" class="form-control"
+                                       placeholder="City, country" autocomplete>
                             </div>
-                            <span class="input-group-text" id="basic-addon2"><button id="search"
-                                                                                     class="btn btn-default"><i
-                                    class="glyphicon glyphicon-search"></i></button></span>
+                            <button id="search" class="btn btn-primary"><i
+                                    class="glyphicon glyphicon-search"></i></button>
                         </form>
-                    </div>
-                    <div class="panel-body">
+                    	</div>
                         <div class="current">
                             <div class="col-xs-12 col-sm-6">
                                 <h2>Today
                                     <div id="icon"></div>
                                     <b><p id="weather"></p></b>
-                                </h2>
-                                <h2 id="today"></h2>
+                                
+                                <span id="today"></span>&#32;°C (avg)</h2>
                             </div>
 
-                            <div class="col-xs-12 col-sm-6">
-                                <h2>Temp</h2>
-                                <h2><b><span id="temp"></span>&#32;<span id="unit">°C</span></b></h2>
-                                <h2>Humidity</h2>
-                                <h2><span id="hum"></span>&#32;%</h2>
+                            <div class="col-xs-12 col-sm-6" style="text-align: center;" >
+                                <h3 style="color: white;">Temp &nbsp;&nbsp;&nbsp;&nbsp;
+                                <b><span id="temp"></span>&#32;<span id="unit">°C</span></b></h3>
+                                <h3 style="color: white;">Feels like &nbsp;&nbsp;&nbsp;&nbsp;
+                                <span id="feels"></span>&#32;°C</h3>
+                                <h3 style="color: white;">Humidity &nbsp;&nbsp;&nbsp;&nbsp;
+                                <span id="hum"></span>&#32;%</h3>
+                                <h3 style="color: white;">Pressure &nbsp;&nbsp;&nbsp;&nbsp;
+                                <span id="pressure"></span>&#32;mb</h3>
+                                <h3 style="color: white;">Wind &nbsp;&nbsp;&nbsp;&nbsp;
+                                <span id="wind"></span>&#32;kph</h3>
+                                <h3 style="color: white;">UV &nbsp;&nbsp;&nbsp;&nbsp;
+                                <span id="uv"></span>&#32;</h3>
                             </div>
                         </div>
                         <h2>
