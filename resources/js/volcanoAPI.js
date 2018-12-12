@@ -74,8 +74,8 @@ function buildMap(url, places) {
                     icon: 'https://maps.google.com/mapfiles/kml/shapes/volcano_maps.png',
                     volcano: val.properties
                 });
-//                 console.log("marker volcano ")
-//                 console.log(marker.volcano)
+                console.log("marker volcano ")
+                console.log(marker.volcano)
 //                 // Form a string that holds desired marker infoWindow content. The infoWindow will pop up when you click on a marker on the map
 // //                 var infowindow = new google.maps.InfoWindow({
 // //                     content: " <div id=\"volcanoImage\"></div>\n" +
@@ -88,7 +88,6 @@ function buildMap(url, places) {
                     $('#volcanoInfo').html(
                         '<p>V name: ' + marker.volcano.V_Name + '</p>'+
                         '<p>V id: ' + marker.volcano.VolcanoID + '</p>'+
-                        '<p>Hazard Level: ' + marker.volcano.Hazard + '</p>'+
                         '<p>Country: ' + marker.volcano.Country + '</p>'+
                         '<p>Region: ' + marker.volcano.Region + '</p>'
     
