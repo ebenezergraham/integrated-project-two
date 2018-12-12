@@ -57,7 +57,11 @@ function openWeatherCall(json) {
     $("#lon").val(json.location.lon);
     $("#temp").html(json.current.temp_c.toFixed(1));
     $("#hum").html(json.current.humidity);
-    $("#icon").html("<img src='http:" + json.current.condition.icon + "'>");
+    $("#wind").html(json.current.wind_kph);
+    $("#pressure").html(json.current.pressure_mb);
+    $("#icon").html("<img src='http:" + json.current.condition.icon.replace("64x64", "128x128") + "'>");
+    $("#uv").html(json.current.uv);
+    $("#feels").html(json.current.feelslike_c);
     $("#weather").html(json.current.condition.text);
     $("#forecast").empty();
     for (let i = 0; i < json.forecast.forecastday.length; i++) {
