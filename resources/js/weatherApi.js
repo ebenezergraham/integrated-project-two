@@ -2,13 +2,13 @@ let lat = 0;
 let lon = 0;
 let days = "&days=7";
 let weekday = new Array(7);
-weekday[0] = "Sunday";
-weekday[1] = "Monday";
-weekday[2] = "Tuesday";
-weekday[3] = "Wednesday";
-weekday[4] = "Thursday";
-weekday[5] = "Friday";
-weekday[6] = "Saturday";
+weekday[0] = "Sun";
+weekday[1] = "Mon";
+weekday[2] = "Tue";
+weekday[3] = "Wed";
+weekday[4] = "Thu";
+weekday[5] = "Fri";
+weekday[6] = "Sat";
 
 openWeatherURL = "http://api.apixu.com/v1/forecast.json?key=8c56c6af6d8a458fa49222421182311&q=";
 
