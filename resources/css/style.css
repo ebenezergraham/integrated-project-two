@@ -8,7 +8,7 @@
 html {
     font-family: "Lato", Arial, sans-serif;
     font-weight: 300;
-    font-size: 25px;
+    font-size: 14px;
 }
 
 body {
@@ -45,7 +45,7 @@ li a {
 }
 h1 {
     font-size: 240%;
-    color: white;
+    color: #29323c;
     margin-top: 0;
     margin-bottom: 20px;
     letter-spacing: 1px;
@@ -102,7 +102,7 @@ p {
 
 
 .fa-bars{
-    font-size: 2.5rem !important;
+    font-size: 25px
 }
 
 .navbar-brand {
@@ -117,7 +117,6 @@ p {
 .navbar {
     overflow: hidden;
     background-color: #f9f9f9;
-    position: fixed;
     height: 65px;
     padding-left:10%;
     width: 100%;
@@ -128,10 +127,11 @@ p {
 
 .navbar a {
     float: left;
+    font-size: 1.3em;
     display: block;
     color: #29323c;
     text-align: center;
-    padding: 24px 16px;
+    padding: 18px 16px;
     text-decoration: none;
     height: 65px;
 }
@@ -168,7 +168,7 @@ p {
     font-size: 1.7rem;
 }
 
-.btn {
+.my-btn {
     display: inline-block;
     padding: 8px 20px !important;
     margin: 8px 0px 20px 0px;
