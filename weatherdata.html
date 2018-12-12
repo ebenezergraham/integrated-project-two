@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="overflow: scroll;">
  <head>
  	<meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -10,6 +10,22 @@
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    	/*.panel-heading {
+  		background-color: #ff0;
+  	}*/
+    	.panel-body {
+	  /*background: linear-gradient(to bottom right, #07074b 0%, #00ffff 200%)';*/
+	  background-image: url(https://cdn.apixu.com/apixu-weather-widget/img/apixu-backgrounds/4_widget3.png);
+	  color: white; 
+	}
+	.coords{
+		padding: 1%;
+		/*border-radius: 8px;*/
+		border: none;
+
+	}
+    </style>
 </head>
 
 <body>
@@ -44,35 +60,46 @@
             </div>
         </div>
     </nav>
-<div class="container-fluid">
+
+
+<div class="container">
+	<main style="padding-top: 10%;">
 	<div class="col-md-offset-2">
 	    <h1>Weather Page</h1>
 	    <h3>Enter a latitude and longitude and to view weather data for that location</h3>
 	</div>
 
-	<div class="col-xs-12 col-sm-6 col-lg-8" id="coordinates">
-		<form id="submit" class="form-inline" action="javascript:void(0);">
-		    <div class="form-group">
-		      <input type="number" class="form-control" id="lat" name="latitude" placeholder="Latitude">
-		    </div>
-		    <div class="form-group">		      
-		      <input type="number" class="form-control" id="lon" name="longitude" placeholder="Longitude">
-		    </div>
-		    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
-	  	</form>
+	<div class="col-xs-12 col-sm-6 col-lg-8 col-md-offset-2" id="coordinates">
+<!-- 		<form id="submit" class="form-inline" action="javascript:void(0);">
+ 		    <span class=""> -->
+		      <input type="number" class="coords" id="lat" name="latitude" placeholder="Latitude">
+		    <!-- </span> -->
+		    <!-- <span class="">		       -->
+		      <input type="number" class="coords" id="lon" name="longitude" placeholder="Longitude">
+<!-- 		    </span> -->
+	  	<!-- </form> -->
+	  			    <button class="coords" id="submit">Submit</button>
+
   	</div>
   	
 	<div class="col-xs-12 col-sm-offset-2 col-lg-8" id="weather-widget">
 	<!-- Here start the widget. This part of code can work alone with the javascript code -->
       <div id="widget" class="panel panel-primary">
-        <div class="panel-heading">
+        <div class="panel-heading" style="background-color: whitesmoke">
           <!-- the action="javascript:void(0);" prevent the form from reload the page everytime it's submitted -->
-        	<form id="search" class="form-inline" role="form" action="javascript:void(0);">
-	            <div class="form-group">
+        	<!-- <form id="search" class="form-inline" role="form" action="javascript:void(0);"> -->
+	            <<!-- div class="form-group">
 	       	        <label class="sr-only" for="city">City,country</label>
 	                <input type="text" id="city" class="form-control form-control-sm" placeholder="City, country" autocomplete></input>
 	            </div>
-				<span class="input-group-text" id="basic-addon2"><button id="search" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button></span>
+				<button id="search" type="button" class="btn-primary btn"><i class="glyphicon glyphicon-search"></i></button> -->
+			<form action="javascript:void(0);">
+				<div class="input-group">
+			      <input type="text" class="form-control" placeholder="Search" name="search">
+			      <span class="input-group-btn">
+			        <button class="btn btn-default" type="button">Go!</button>
+			      </span>
+			    </div>
 			</form>
         </div>
         <div class="panel-body">
@@ -103,8 +130,9 @@
 	</div>
 	</div>
 	
+</main>
 </div>
-<!-- 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsIiS_x7fASxyQSJGDjSXORFldMHCjFME&callback=initMap"></script> -->
+
 	<script type="text/javascript" src="resources/js/weatherApi.js"></script>
 <script src="resources/js/script.js"></script>
 
