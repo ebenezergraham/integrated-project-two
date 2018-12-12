@@ -2,7 +2,7 @@ var map;
 
 var quakeFeeds = {
     "volcanos": {
-        "all_volcanos": "https://data.humdata.org/dataset/a60ac839-920d-435a-bf7d-25855602699d/resource/7234d067-2d74-449a-9c61-22ae6d98d928/download/volcano.geojson",
+        "All Volcanos": "https://data.humdata.org/dataset/a60ac839-920d-435a-bf7d-25855602699d/resource/7234d067-2d74-449a-9c61-22ae6d98d928/download/volcano.geojson",
     }
 };
 var markers = []; // keep an array of Google Maps markers, to be used by the Google Maps clusterer
@@ -28,17 +28,17 @@ for (var prop in quakeFeeds) {
 }
 /* respond to a button press of any button of 'feed-name' class */
 $('.feed-name').click(function (e) {
-    // We fetch the earthquake feed associated with the actual button that has been pressed.
+    // We fetch the volcano feed associated with the actual button that has been pressed.
     // In this example we are not plotting on a map, just demonstrating how to get the data.
     $.ajax({
         url: $(e.target).data('feedurl'), // The GeoJSON URL associated with a specific button was stored in the button's properties when the button was created
 
         success: function (data) {  // We've received the GeoJSON data
-            var places = []; // We store the names of earthquake locations in this array
+            var places = []; // We store the names of Volcano locations in this array
             $.each(data.features, function (key, val) {  // Just get a single value ('place') and save it in an array
-                places.push(val.properties.place); // Add a new earthquake location to the array.
+                places.push(val.properties.place); // Add a new volcano location to the array.
             });
-            buildMap($(e.target).data('feedurl'))
+            buildMap($(e.target).data('feedurl'), places)
         }
     });
 });
@@ -76,7 +76,7 @@ function buildMap(url, places) {
                 });
                 console.log("marker volcano ")
                 console.log(marker.volcano)
-                // Form a string that holds desired marker infoWindow content. The infoWindow will pop up when you click on a marker on the map
+//                 // Form a string that holds desired marker infoWindow content. The infoWindow will pop up when you click on a marker on the map
                 var infowindow = new google.maps.InfoWindow({
                     content: " <div id=\"volcanoImage\"></div>\n" +
                         "    <div id=\"volcanoInfo\">No volcano data available</div>"
