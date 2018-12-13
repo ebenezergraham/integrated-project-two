@@ -1,44 +1,21 @@
 var map;
-
-var quakeFeeds = {
-    "volcanos": {
-        "All Volcanos": "https://data.humdata.org/dataset/a60ac839-920d-435a-bf7d-25855602699d/resource/7234d067-2d74-449a-9c61-22ae6d98d928/download/volcano.geojson",
-    }
-};
+var url = "https://data.humdata.org/dataset/a60ac839-920d-435a-bf7d-25855602699d/resource/7234d067-2d74-449a-9c61-22ae6d98d928/download/volcano.geojson";
 var markers = []; // keep an array of Google Maps markers, to be used by the Google Maps clusterer
-/* Function to construct a set of web page buttons of class: 'feed-name' where each button has a stored URL property */
-function makeChildProps(obj, currentProp) {
-    var childProps = '';
+var infowindow;
 
-    for (var prop in obj[currentProp]) {
-        var el = "<div class='child-prop'><button class='feed-name' data-feedurl='" + obj[currentProp][prop] + "'>" + prop + "</button></div>";
-        childProps += el;
-    }
-
-    return childProps;
-}
-
-/* construct the buttons (that include the geojson URL properties) */
-for (var prop in quakeFeeds) {
-    if (!quakeFeeds.hasOwnProperty(prop)) {
-        continue;
-    }
-    $('#feedSelector').append("<div class='feed-date'>" + prop + "</div>" + makeChildProps(quakeFeeds, prop));
-    console.log(makeChildProps(quakeFeeds, prop));
-}
-/* respond to a button press of any button of 'feed-name' class */
-$('.feed-name').click(function (e) {
+$(document).ready(function () {
     // We fetch the volcano feed associated with the actual button that has been pressed.
     // In this example we are not plotting on a map, just demonstrating how to get the data.
     $.ajax({
-        url: $(e.target).data('feedurl'), // The GeoJSON URL associated with a specific button was stored in the button's properties when the button was created
+        url: url, // The GeoJSON URL associated with a specific button was stored in the button's properties when the button was created
 
         success: function (data) {  // We've received the GeoJSON data
             var places = []; // We store the names of Volcano locations in this array
-            $.each(data.features, function (key, val) {  // Just get a single value ('place') and save it in an array
-                places.push(val.properties.place); // Add a new volcano location to the array.
-            });
-            buildMap($(e.target).data('feedurl'), places)
+            // $.each(data.features, function (key, val) {  // Just get a single value ('place') and save it in an array
+            //     places.push(val.properties.place); // Add a new volcano location to the array.
+            //     console.log("this is a place" + val.properties.place);
+            // });
+            buildMap(url, places)
         }
     });
 });
@@ -54,7 +31,6 @@ function buildMap(url, places) {
     $.ajax({
         // The URL of the specific data required
         url: url,
-
         // Called if there is a problem loading the data
         error: function () {
             $('#info').html('<p>An error has occurred</p>');
@@ -72,27 +48,26 @@ function buildMap(url, places) {
                     position: latLng,
                     map: map,
                     icon: 'https://maps.google.com/mapfiles/kml/shapes/volcano_maps.png',
-                    volcano: val.properties
+                    volcano: val.properties,
                 });
                 console.log("marker volcano ")
                 console.log(marker.volcano)
 //                 // Form a string that holds desired marker infoWindow content. The infoWindow will pop up when you click on a marker on the map
-                var infowindow = new google.maps.InfoWindow({
-                    content:
-                    " <div id=\"volcanoImage\"></div>\n" +
-                        "    <div id=\"volcanoInfo\">Click Again To see this volcano's details.</div>"
-                });
+                
+
                 marker.addListener('click', function () {
-                    // We use the lat and lon as the parameters in the API call to weather service
+                    try {  infowindow.close();  }catch(err) {  }
+                   
                     var lat = marker.position.lat();
                     var lng = marker.position.lng();
-                    $('#volcanoInfo').html(
-                        '<p>Volcano name: ' + marker.volcano.V_Name + '</p>'+
+                    var cont = '<p>Volcano name: ' + marker.volcano.V_Name + '</p>'+
                         '<p>Volcano id: ' + marker.volcano.VolcanoID + '</p>'+
                         '<p>Country: ' + marker.volcano.Country + '</p>'+
-                        '<p>Region: ' + marker.volcano.Region + '</p>'
-                    );
-                        $('#volcanoImage').empty().append('<i class="fas fa-volcano"></i>');
+                        '<p>Region: ' + marker.volcano.Region + '</p>';                  
+
+                    infowindow = new google.maps.InfoWindow({
+                        content: cont
+                    });
                     infowindow.open(map, marker);
                 });
                 markers[i++] = marker; // Add the marker to array to be used by clusterer
@@ -103,6 +78,6 @@ function buildMap(url, places) {
     });
 }
 
-$(document).ready(function () {
-        buildMap("https://data.humdata.org/dataset/a60ac839-920d-435a-bf7d-25855602699d/resource/7234d067-2d74-449a-9c61-22ae6d98d928/download/volcano.geojson");
-});
+// $(document).ready(function () {
+//         buildMap(url);
+// });
