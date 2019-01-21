@@ -108,7 +108,7 @@ function buildMap(url, places) {
                     var lat = marker.position.lat();
                     var lng = marker.position.lng();
                     // You need to use the FREE signup at https://www.apixu.com/ to get a key for the Weather URL below
-                    theURL = 'http://api.apixu.com/v1/current.json?key=67923d08f9504585a23131454180311&q=' + lat.toFixed(4) + ',' + lng.toFixed(4);
+                    theURL = 'https://api.apixu.com/v1/current.json?key=67923d08f9504585a23131454180311&q=' + lat.toFixed(4) + ',' + lng.toFixed(4);
                     $.ajax({
                         url: theURL,
                         success: function (data) {
